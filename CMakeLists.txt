@@ -21,3 +21,17 @@ add_definitions("-std=c++20")
 add_executable(client main.cpp)
 
 set_target_properties(client PROPERTIES LINK_FLAGS "-s DEMANGLE_SUPPORT=1 --bind")
+
+# These paths are known by the compiler, but not by Visual Studio
+# I can't seem to figure out a way to tell it.. so.. whatever...
+#target_include_directories(client
+#    PUBLIC
+#        $ENV{EMSDK_ROOT}/upstream/include
+#        $ENV{EMSDK_ROOT}/upstream/emscripten/system/include
+#)
+
+#target_compile_definitions(client
+#    PUBLIC
+#        __EMSCRIPTEN__
+#        __cplusplus=202002L
+#)

@@ -6,7 +6,7 @@
         "patch": 0
     },
     "configurePresets": [{
-            "name": "debug",
+            "name": "emscripten_debug",
             "displayName": "Emscripten (Debug)",
             "description": "Build with emscripten using Ninja in Debug",
             "generator": "Ninja",
@@ -17,20 +17,10 @@
                     "type": "FILEPATH"
                 },
                 "CMAKE_BUILD_TYPE": "debug"
-            },
-            "vendor": {
-                "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "intelliSenseOptions": {
-                        "useCompilerDefaults": true,
-                        "additionalCompilerArgs": [
-                            "--cflags"
-                        ]
-                    }
-                }
             }
         },
         {
-            "name": "release",
+            "name": "emscripten_release",
             "displayName": "Emscripten (Release)",
             "description": "Build with emscripten using Ninja in Release",
             "generator": "Ninja",
@@ -41,11 +31,6 @@
                     "type": "FILEPATH"
                 },
                 "CMAKE_BUILD_TYPE": "release"
-            },
-            "vendor": {
-                "microsoft.com/VisualStudioSettings/CMake/1.0": {
-                    "intelliSenseMode": "linux-clang-x64"
-                }
             }
         }
     ]

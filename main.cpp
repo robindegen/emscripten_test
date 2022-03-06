@@ -8,7 +8,9 @@ class native_application
 public:
     native_application()
     {
+#ifdef __EMSCRIPTEN__
         std::cout << "ctor\n";
+#endif
     }
 
     void update_div()
