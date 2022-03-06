@@ -1,5 +1,6 @@
 #include <emscripten/bind.h>
 #include <emscripten/val.h>
+#include <emscripten.h>
 #include <iostream>
 
 
@@ -26,4 +27,13 @@ EMSCRIPTEN_BINDINGS(EMTest) {
     emscripten::class_<native_application>("NativeApplication")
         .constructor()
         .function("UpdateDiv", &native_application::update_div);
+}
+
+int main()
+{
+    EM_ASM(
+        webassembly_onload()
+    );
+
+    return 0;
 }
