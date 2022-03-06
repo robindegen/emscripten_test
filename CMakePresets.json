@@ -1,0 +1,52 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 22,
+        "patch": 0
+    },
+    "configurePresets": [{
+            "name": "debug",
+            "displayName": "Emscripten (Debug)",
+            "description": "Build with emscripten using Ninja in Debug",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": {
+                    "value": "$env{EMSDK_ROOT}/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
+                    "type": "FILEPATH"
+                },
+                "CMAKE_BUILD_TYPE": "debug"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "intelliSenseOptions": {
+                        "useCompilerDefaults": true,
+                        "additionalCompilerArgs": [
+                            "--cflags"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "release",
+            "displayName": "Emscripten (Release)",
+            "description": "Build with emscripten using Ninja in Release",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": {
+                    "value": "$env{EMSDK_ROOT}/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
+                    "type": "FILEPATH"
+                },
+                "CMAKE_BUILD_TYPE": "release"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "intelliSenseMode": "linux-clang-x64"
+                }
+            }
+        }
+    ]
+}

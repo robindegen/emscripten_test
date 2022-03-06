@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>WebAssembly Test</title>
+    <script type="text/javascript" src="build/client.js"></script>
+</head>
+    <body>
+        <div id="testid"></div>
+        <script type="text/javascript">
+            window.onload = function() {
+                var instance = new Module.NativeApplication(); 
+                instance.UpdateDiv();
+            }
+        </script>
+    </body>
+</html>
