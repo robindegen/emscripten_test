@@ -18,9 +18,7 @@ project(EmscriptenTest)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_definitions("-std=c++20")
 
-add_executable(client main.cpp)
-
-set_target_properties(client PROPERTIES LINK_FLAGS "-s DEMANGLE_SUPPORT=1 --bind")
+add_subdirectory(source)
 
 # These paths are known by the compiler, but not by Visual Studio
 # I can't seem to figure out a way to tell it.. so.. whatever...
